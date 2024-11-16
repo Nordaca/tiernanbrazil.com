@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+@keyframes hoverfade {
+  from  {   border-bottom: 2px solid rgba(233, 233, 233, 0);    }
+  to    {   border-bottom: 2px solid rgba(233, 233, 233, 1);    }
+}
+
+@keyframes fadein {
+  from  {   
+    opacity:0;
+    overlay:0;
+  }
+  to    {
+    opacity:1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    margin-top: -500px;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+html {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)) , url(img/main-bkgrnd.jpg);
+  background-size:auto, 100%;
+  margin: 0px;
+}
+
+body {
+  opacity: 0;
+  animation: fadein;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  padding: 0px;
+  margin: 0px;
+  background-size: cover;
+}
+
+.header {
+  animation: 3s slide-in;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin: 0%;
+  padding-left:0px;
+  padding-right:0px;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .75), rgba(0, 0, 0, 0));
+  color: white;
+}
+
+.header>h1 {
+  font-family: "Ballet", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+  vertical-align:baseline;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left:5%;
+  margin-right:5%;
+}
+.header>button {
+  display: inline-flex;
+  margin-left:2rem;
+  margin-right:2rem;
+  align-items: center;
+  justify-content:center;
+  font-size: 1rem;
+  color: rgb(233, 233, 233);
+  cursor:default;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  padding-bottom:0%;
+  padding-top:2.5%;
+  width: 96px;
+}
+.header>button:hover {
+  cursor:pointer;
+  font-size: 1rem;
+  color: rgb(233, 233, 233);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  animation-name: hoverfade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.mainbodytext {
+  margin:0px;
+  padding-left: 40%;
+  padding-right: 40%;
+}
+.mainbodytext>h2 {
+  display:inline-flex;
+  color: rgb(233, 233, 233);
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 3rem*device;
+}
+.contact-button>button {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 1rem;
+  color: rgb(24, 24, 24);
+  cursor:default;
+  background-color: rgba(233, 233, 233, 0.432);
+  border: none;
+  width: 144px;
+  height: 64px;
+  border-radius: 2rem;
+}
+.contact-button>button:hover {
+  cursor:pointer;
+  font-size: 1rem;
+  background-color: rgba(233, 233, 233, 0.911);
+  border: 1.5px solid black;
+}
+
+a {
+  color: rgb(233, 233, 233);
+  text-decoration: none;
+}
+.contact-button {
+  opacity: 0;
+  overlay:0;
+  animation: 3s fadein;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+  color: black;
+}
+
+@media (min-width: 0px) {
+  html {
+    background-size:500%;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  .mainbodytext {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .works{
+    margin-left:0%;
+    margin-right:0%;
+    background-color:rgba(0, 0, 0, 0);
+  }
+}
+@media (min-width: 1800px) {
+  html {
+    background-size:auto, 100%;
+  }
+  h2{
+    font-size: 3rem;
+  }
+  .mainbodytext {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .works{
+    margin-left:25%;
+    margin-right:25%;
+    background-color:rgba(0, 0, 0, 0.5);
+  }
+}

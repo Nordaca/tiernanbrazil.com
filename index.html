@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1800, initial-scale=1.0">
+  <title>Tiernan Brazil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <button class="bu1"><a href="index.html">Home</a></button>
+    <button class="bu2"><a href="#">Info</a></button>
+    <h1>Tiernan Brazil</h1>
+    <button class="bu3"><a href="pages/contact.html">Contact</a></button>
+    <button class="bu4"><a href="pages/works.html">Works</a></button>
+  </div>
+  <div class="mainbodytext">
+    <h2 id="typedtext"></h2>
+    <a href="pages/contact.html" class="contact-button"><button>Get in touch</button></a>
+  </div>
+</body>
+<script>
+  // set up text to print, each item in array is new line
+  var aText = new Array(
+  "Hello, my name is Tiernan Brazil. I am a composer working out of Florida, U.S.", 
+  "I make music to be used in games, movies, or any other creative projects."
+  );
+  var iSpeed = 25; // time delay of print out
+  var iIndex = 0; // start printing array at this posision
+  var iArrLength = aText[0].length; // the length of the text array
+  var iScrollAt = 20; // start scrolling up at this many lines
+  
+  var iTextPos = 0; // initialise text position
+  var sContents = ''; // initialise contents variable
+  var iRow; // initialise current row
+  
+  function typewriter()
+  {
+  sContents =  ' ';
+  iRow = Math.max(0, iIndex-iScrollAt);
+  var destination = document.getElementById("typedtext");
+  
+  while ( iRow < iIndex ) {
+    sContents += aText[iRow++] + '<br />';
+  }
+  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos);
+  if ( iTextPos++ == iArrLength ) {
+    iTextPos = 0;
+    iIndex++;
+    if ( iIndex != aText.length ) {
+    iArrLength = aText[iIndex].length;
+    setTimeout("typewriter()", 500);
+    }
+  } else {
+    setTimeout("typewriter()", iSpeed);
+  }
+  }
+  typewriter();
+</script>
+</html>
